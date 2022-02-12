@@ -59,16 +59,16 @@ class Puzzle:
         return self._is_found
 
     def show_word(self):
-        """ Concatenate letters to show it
-            Check if the word has been discovered
-            Set the end of game if the word has been discovered 
-         """
-        i = 0
-        self._guessword = ''
-        while i < len(self._guess_word):
-            self._guessword = self._guessword + self._guess_word[i]
-            i += 1
-        self._terminal_service.write_text(self._guessword)   
+      """ Concatenate letters to show it
+      Check if the word has been discovered
+      Set the end of game if the word has been discovered 
+      """
+      i = 0
+      self._guessword = ''
+      while i < len(self._guess_word):
+         self._guessword = self._guessword + self._guess_word[i]
+         i += 1
+      self._terminal_service.write_text(self._guessword)   
     def is_solved(self):
         if self._guessword == self._word:
            self._continue = False

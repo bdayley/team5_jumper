@@ -59,7 +59,6 @@ class Director:
          self (Director): An instance of Director.
       """
       self._guess_correct = self._puzzle.check_guess(self._player_guess)
-      self._is_playing = not self._puzzle.is_solved()
       
    def _do_outputs(self):
       """
@@ -72,4 +71,4 @@ class Director:
       """
       self._puzzle.show_word()     
       self._player.draw(self._guess_correct)
-      self._is_playing = self._player.is_alive()
+      self._is_playing = self._player.is_alive() and not self._puzzle.is_solved()
