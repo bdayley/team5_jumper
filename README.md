@@ -16,25 +16,26 @@ If the player has no more parachute the game is over.
 
 ## Project Structure
 
-Director\
- Methods:\
- start_game()\
- get_input()\
- do_updates()\
- do_outputs()\
-Player\
- Methods:\
- guess_letter()
-draw()
-is_alive()
-Puzzle\
- Methods:\
- check_guess()
-show_word()
-is_solved()
-TerminalService\
- read_text()
-write_text()
+- Director
+  - Methods:
+    - start_game()
+    - get_input()
+    - do_updates()
+    - do_outputs()
+- Player
+  - Methods:
+    - guess_letter()
+    - draw()
+    - is_alive()
+- Puzzle
+  - Methods:
+    - check_guess()
+    - show_word()
+    - is_solved()
+- TerminalService
+  - Methods:
+    - read_text()
+    - write_text()
 
 ## Authors
 
