@@ -25,6 +25,7 @@ class Puzzle:
         self._terminal_service = TerminalService()
         self._guessword = ''
         self._continue = True
+    
     def get_puzzle(self):
         """ Gets the random word from list
             Build the list to check the letters
@@ -52,7 +53,7 @@ class Puzzle:
         while i < len(self._word):
             if self._letters_word[i] == letter:
                 if self._guess_word[i] == '_ ':
-                   self._guess_word[i] = letter
+                   self._guess_word[i] = letter + ' '
                    self._is_found = True
                    break
             i += 1
@@ -68,11 +69,10 @@ class Puzzle:
       while i < len(self._guess_word):
          self._guessword = self._guessword + self._guess_word[i]
          i += 1
-      self._terminal_service.write_text(self._guessword)   
+      self._terminal_service.write_text('\n' + self._guessword + '\n')   
+    
     def is_solved(self):
-        if self._guessword == self._word:
+        if self._guessword.replace(' ', '') == self._word:
            self._continue = False
         return self._continue
-    def blank_line(self):
-        text = '_' * len(self._word)
-        self._terminal_service.write_text(text)
+
