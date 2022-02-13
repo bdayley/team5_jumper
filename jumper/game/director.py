@@ -53,7 +53,6 @@ class Director:
          self (Director): An instance of Director.
       """
       self._player_guess = self._player.guess_letter()
-      self._guess_letter = input('Guess a letter [a-z]: ')
    def _do_updates(self):
       """
       Has the puzzle check the letter guess from the player and checks to
