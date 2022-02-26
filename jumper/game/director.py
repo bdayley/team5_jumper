@@ -37,8 +37,8 @@ class Director:
          self (Director): an instance of Director.
       """
       self._puzzle.get_puzzle()
+      self._puzzle.show_word()
       self._player.draw(True)
-      self._puzzle.blank_line()
       
       while self._is_playing:
          self._get_inputs()
@@ -73,6 +73,6 @@ class Director:
       Args:
          self (Director): An instance of Director.
       """
-      self._player.draw(self._guess_correct)
       self._puzzle.show_word()
+      self._player.draw(self._guess_correct)
       self._is_playing = self._player.is_alive() and self._puzzle.is_solved()
